@@ -1,8 +1,12 @@
 const postsBox = document.getElementById('posts-box')
 const spinnerBox = document.getElementById('spinner-box')
 const loadBtn = document.getElementById('load-btn')
+const addPostBtn = document.getElementById('addPost-btn')
+const closeModalBtn = [...document.getElementsByClassName('postModal-close')]
+
 const endBox = document.getElementById('end-box')
 const alertBox = document.getElementById('alert-box')
+const dropzone = document.getElementById('my-dropzone')
 
 const detailUrl = window.location.href
 
@@ -147,9 +151,9 @@ postForm.addEventListener('submit', e => {
                 </div>
             `)
             likeUnlikePosts()
-            $('#addPostModal').modal('hide')
+            //$('#addPostModal').modal('hide')
             handleAlerts('success', 'New post added!')
-            postForm.reset()
+            //postForm.reset()
         },
         error: function(error){
             console.log(error)
@@ -158,5 +162,17 @@ postForm.addEventListener('submit', e => {
         }
     })
 })
+
+addPostBtn.addEventListener('click', () => {
+    dropzone.classList.remove('not-visible')
+})
+
+closeModalBtn.forEach(btn => btn.addEventListener('click', () => {
+    postForm.reset()
+    if (!dropzone.classList.contains('not-visible')){
+        dropzone.classList.add('not-visible')
+    }
+}))
+
 
 getData()
