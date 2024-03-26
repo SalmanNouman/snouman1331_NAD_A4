@@ -175,7 +175,7 @@ closeModalBtn.forEach(btn => btn.addEventListener('click', () => {
         dropzone.classList.add('not-visible')
     }
     const myDropzone = Dropzone.forElement('#my-dropzone')
-    myDropzone.removeAllfiles(true)
+    myDropzone.removeAllFiles(true)
 }))
 
 Dropzone.autoDiscover = false
