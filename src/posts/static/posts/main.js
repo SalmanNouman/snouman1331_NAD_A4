@@ -4,6 +4,8 @@ const loadBtn = document.getElementById('load-btn')
 const endBox = document.getElementById('end-box')
 const alertBox = document.getElementById('alert-box')
 
+const detailUrl = window.location.href
+
 const postForm = document.getElementById('post-form')
 const formTitle = document.getElementById('id_title')
 const formBody = document.getElementById('id_body')
@@ -71,7 +73,7 @@ const getData = () => {
                         <div class="card-footer">
                             <div class="row">
                                 <div class="col-2">
-                                    <a href="#" class="btn btn-primary">Details</a>
+                                    <a href="${detailUrl}${el.id}" class="btn btn-primary">Details</a>
                                 </div>
                                 <div class="col-2">
                                     <form class="like-unlike-forms" data-form-id="${el.id}">
