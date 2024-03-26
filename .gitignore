@@ -2,3 +2,4 @@
 /Lib
 *.pyc
 src/posts_proj/__pycache__/settings.cpython-312.pyc
+/src/media/photos
